@@ -3,857 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mind Map ม.80-82 การพยายามกระทำความผิด</title>
+<title>Smart Law STOU — เรียนกฎหมายฉบับอัจฉริยะ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&family=Noto+Serif+Thai:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Noto+Serif+Thai:wght@400;700&display=swap');
-:root{
-  --bg:#0a0e1a;--surface:#111827;--card:#1a2235;--card2:#1e293b;
-  --gold:#f0c040;--gold2:#fde68a;
-  --red:#ef4444;--blue:#3b82f6;--green:#22c55e;
-  --purple:#a855f7;--orange:#f97316;--teal:#14b8a6;
-  --yellow:#eab308;--pink:#ec4899;--cyan:#06b6d4;
-  --border:#2d3748;--text:#e2e8f0;--dim:#64748b;--dim2:#94a3b8;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ===== HEADER ===== */
-.header{
-  background:linear-gradient(135deg,#0a0e1a 0%,#1a1040 50%,#0a1a2e 100%);
-  border-bottom:2px solid var(--gold);
-  padding:26px 24px 18px;text-align:center;position:relative;overflow:hidden;
-}
-.header::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 30% 50%,rgba(168,85,247,.12) 0%,transparent 60%),
-             radial-gradient(ellipse at 70% 50%,rgba(59,130,246,.1) 0%,transparent 60%);}
-.header-badge{display:inline-block;background:linear-gradient(135deg,var(--purple),var(--blue));
-  color:#fff;font-weight:800;font-size:.72rem;padding:3px 14px;border-radius:20px;margin-bottom:8px;letter-spacing:1px;}
-.header h1{font-family:'Noto Serif Thai',serif;font-size:clamp(1.2rem,3vw,1.9rem);
-  color:var(--gold);letter-spacing:.5px;position:relative;}
-.header .sub{font-size:.85rem;color:var(--dim2);margin-top:6px;position:relative;}
-.header-matra{display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
-.hm-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;border-radius:20px;
-  font-weight:800;font-size:.9rem;cursor:pointer;transition:all .2s;border:2px solid;}
-.hm-badge:hover{transform:scale(1.06);}
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #8A6E2F;
+    --dark: #0D0D12;
+    --dark2: #16161F;
+    --dark3: #1E1E2A;
+    --text: #F0EDE6;
+    --text-dim: #9A9490;
+    --fb-blue: #1877F2;
+  }
 
-/* ===== NAV BUTTONS ROW ===== */
-.nav-row{display:flex;justify-content:center;gap:8px;padding:14px 20px;flex-wrap:wrap;max-width:1000px;margin:0 auto;}
-.nav-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:10px;
-  font-family:'Sarabun',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;
-  border:2px solid;transition:all .22s;background:var(--card);}
-.nav-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.4);}
-.nav-btn.active{color:#000!important;}
+  html, body {
+    height: 100%;
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Sarabun', sans-serif;
+    overflow-x: hidden;
+  }
 
-/* ===== MAIN ===== */
-.main{max-width:1000px;margin:0 auto;padding:0 20px 60px;}
-.section{display:none;animation:fadeUp .3s ease;}
-.section.show{display:block;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    position: relative;
+  }
 
-/* ===== SECTION TITLE ===== */
-.sec-head{display:flex;align-items:center;gap:12px;padding:18px 0 14px;}
-.sec-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
-.sec-title h2{font-size:1.1rem;font-weight:800;}
-.sec-title p{font-size:.78rem;color:var(--dim2);margin-top:3px;}
+  /* Background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(201,168,76,0.04) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(201,168,76,0.04) 40px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
 
-/* ===== OVERVIEW CARDS ===== */
-.ov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:4px;}
-.ov-card{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;
-  transition:transform .2s,box-shadow .2s;cursor:pointer;}
-.ov-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.5);}
-.ov-top{padding:14px 16px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
-.ov-emoji{font-size:1.6rem;}
-.ov-info .ov-num{font-weight:800;font-size:1.1rem;}
-.ov-info .ov-name{font-size:.78rem;color:var(--dim2);margin-top:2px;}
-.ov-body{padding:12px 16px 14px;}
-.ov-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;
-  font-size:.8rem;border-bottom:1px solid rgba(255,255,255,.04);}
-.ov-row:last-child{border:none;}
-.ov-label{color:var(--dim2);}
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    animation: fadeUp 0.8s ease both;
+  }
 
-/* ===== PENALTY COMPARE TABLE ===== */
-.cmp-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:10px;}
-.cmp-table th{padding:10px 14px;text-align:center;font-weight:800;font-size:.78rem;
-  border-bottom:2px solid var(--border);letter-spacing:.4px;}
-.cmp-table td{padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:middle;text-align:center;}
-.cmp-table tr:last-child td{border:none;}
-.cmp-table tr:hover td{background:rgba(255,255,255,.03);}
-.cmp-table td:first-child{text-align:left;}
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-/* ===== MAT-NUM (clickable) ===== */
-.mn{display:inline-block;font-weight:800;font-size:.95rem;padding:3px 12px;border-radius:6px;
-  min-width:46px;text-align:center;cursor:pointer;transition:transform .15s,box-shadow .15s,filter .15s;user-select:none;}
-.mn:hover{transform:scale(1.13);box-shadow:0 0 14px rgba(255,255,255,.25);filter:brightness(1.25);}
-.mn:active{transform:scale(.96);}
-.c-purple{color:var(--purple);background:rgba(168,85,247,.15);}
-.c-blue{color:var(--blue);background:rgba(59,130,246,.15);}
-.c-green{color:var(--green);background:rgba(34,197,94,.15);}
-.c-gold{color:var(--gold);background:rgba(240,192,64,.15);}
-.c-red{color:var(--red);background:rgba(239,68,68,.15);}
-.c-orange{color:var(--orange);background:rgba(249,115,22,.15);}
-.c-teal{color:var(--teal);background:rgba(20,184,166,.15);}
-.c-cyan{color:var(--cyan);background:rgba(6,182,212,.15);}
+  /* Top ornament */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    opacity: 0.5;
+  }
+  .ornament-line {
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .ornament-line.right {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
 
-/* ===== NOTE ===== */
-.note{margin-top:10px;padding:12px 16px;border-radius:10px;font-size:.8rem;border:1px solid;line-height:1.8;}
-.note strong{display:block;margin-bottom:4px;}
+  /* Lock icon */
+  .icon-wrap {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 3s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.15); }
+    50%       { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+  }
+  .icon-wrap svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
-/* ===== FLOW DIAGRAM ===== */
-.flow-wrap{margin-top:14px;}
-.flow-row{display:flex;align-items:stretch;gap:0;margin-bottom:6px;flex-wrap:nowrap;overflow-x:auto;}
-.flow-box{background:var(--card2);border:1px solid var(--border);border-radius:10px;
-  padding:12px 14px;font-size:.8rem;line-height:1.6;flex:1;min-width:160px;}
-.flow-arrow{display:flex;align-items:center;justify-content:center;padding:0 6px;
-  font-size:1.2rem;color:var(--dim2);flex-shrink:0;}
+  /* Heading */
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-family: 'Noto Serif Thai', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+  h1 span { color: var(--gold); }
 
-/* ===== COMPARE BOXES ===== */
-.compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
-@media(max-width:640px){.compare-grid{grid-template-columns:1fr;}}
-.cmp-box{border-radius:12px;border:2px solid;padding:16px;position:relative;}
-.cmp-box .cmp-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-  font-weight:800;font-size:.85rem;padding:2px 16px;border-radius:20px;white-space:nowrap;}
-.cmp-box .cmp-title{font-size:.9rem;font-weight:800;text-align:center;margin-top:8px;margin-bottom:10px;}
-.cmp-item{font-size:.78rem;line-height:1.8;color:var(--dim2);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.cmp-item:last-child{border:none;}
-.cmp-item strong{color:var(--text);}
+  .subtitle {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
 
-/* ===== STATUTE SECTION ===== */
-.law-block{background:var(--card);border-radius:14px;border:1px solid var(--border);
-  overflow:hidden;margin-bottom:14px;}
-.law-block-head{padding:14px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;
-  transition:background .2s;}
-.law-block-head:hover{background:rgba(255,255,255,.03);}
-.law-block-head .lb-num{font-weight:800;font-size:1.1rem;padding:4px 14px;border-radius:8px;}
-.law-block-head .lb-title{font-weight:700;font-size:.92rem;}
-.law-block-head .lb-sub{font-size:.75rem;color:var(--dim2);margin-top:2px;}
-.law-block-head .lb-chevron{margin-left:auto;font-size:1.1rem;transition:transform .25s;color:var(--dim2);}
-.law-block-body{display:none;padding:0 18px 18px;border-top:1px solid var(--border);}
-.law-block-body.open{display:block;}
-.law-text{background:rgba(240,192,64,.06);border:1px solid rgba(240,192,64,.2);
-  border-left:4px solid var(--gold);border-radius:10px;padding:16px;
-  font-size:.88rem;line-height:2.2;white-space:pre-wrap;margin-top:14px;}
-.law-label{color:var(--gold);font-weight:800;display:block;margin-bottom:6px;font-size:.9rem;}
-.analysis{margin-top:12px;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);
-  border-radius:10px;padding:14px;font-size:.82rem;line-height:1.9;}
-.analysis h4{color:var(--blue);font-size:.88rem;margin-bottom:8px;}
-.penalty-box{margin-top:10px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);
-  border-radius:10px;padding:12px;font-size:.82rem;line-height:1.8;}
-.penalty-box h4{color:var(--red);font-size:.88rem;margin-bottom:6px;}
+  /* Card */
+  .card {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+  .page-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--dark3);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .page-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--fb-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Sarabun', sans-serif;
+  }
+  .page-info { text-align: left; }
+  .page-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .page-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
 
-/* ===== QUIZ SECTION ===== */
-.quiz-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:4px;}
-.quiz-card{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;}
-.quiz-head{padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;}
-.quiz-num{font-weight:800;font-size:.8rem;padding:3px 10px;border-radius:6px;flex-shrink:0;margin-top:1px;}
-.quiz-q{font-size:.88rem;line-height:1.8;flex:1;}
-.quiz-body{padding:14px 18px;}
-.quiz-fact{background:var(--card2);border-radius:8px;padding:12px 14px;
-  font-size:.82rem;line-height:1.8;color:var(--dim2);margin-bottom:12px;
-  border-left:3px solid var(--border);}
-.quiz-hint{display:flex;justify-content:flex-end;margin-bottom:8px;}
-.quiz-btn{background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.35);
-  color:var(--purple);font-family:'Sarabun',sans-serif;font-size:.78rem;font-weight:700;
-  padding:5px 14px;border-radius:8px;cursor:pointer;transition:all .2s;}
-.quiz-btn:hover{background:var(--purple);color:#000;}
-.quiz-answer{display:none;background:var(--card2);border-radius:10px;
-  border:1px solid rgba(34,197,94,.25);padding:14px;}
-.quiz-answer.show{display:block;}
-.ans-part{margin-bottom:10px;}
-.ans-part:last-child{margin:0;}
-.ans-label{font-size:.72rem;font-weight:800;letter-spacing:.8px;
-  color:var(--gold);margin-bottom:6px;display:block;}
-.ans-text{font-size:.83rem;line-height:1.9;color:var(--text);}
-.ans-verdict{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
-  border-radius:8px;padding:10px 12px;font-size:.85rem;font-weight:700;
-  color:var(--green);margin-top:10px;}
+  /* CTA Button */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: var(--fb-blue);
+    color: #fff;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn svg {
+    width: 20px; height: 20px;
+    fill: #fff;
+    flex-shrink: 0;
+  }
 
-/* ===== TIMELINE ===== */
-.timeline{margin-top:14px;position:relative;}
-.timeline::before{content:'';position:absolute;left:22px;top:0;bottom:0;
-  width:2px;background:linear-gradient(180deg,var(--purple),var(--blue),var(--green));}
-.tl-item{display:flex;gap:16px;margin-bottom:20px;position:relative;}
-.tl-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:1rem;flex-shrink:0;border:3px solid;z-index:1;}
-.tl-content{flex:1;padding-top:2px;}
-.tl-content h4{font-size:.9rem;font-weight:800;margin-bottom:6px;}
-.tl-content p{font-size:.8rem;line-height:1.8;color:var(--dim2);}
-
-/* ===== FOOTER ===== */
-footer{text-align:center;font-size:.73rem;color:var(--dim);padding:16px 20px;
-  border-top:1px solid var(--border);display:flex;flex-direction:column;
-  align-items:center;gap:4px;position:relative;}
-.ver-badge{position:absolute;right:16px;top:50%;transform:translateY(-50%);
-  background:rgba(255,255,255,.05);border:1px solid var(--border);
-  border-radius:6px;padding:2px 10px;font-size:.68rem;color:var(--dim);font-weight:700;}
-
-/* ===== LAW MODAL ===== */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
-  z-index:1000;align-items:center;justify-content:center;padding:16px;
-  backdrop-filter:blur(6px);}
-.modal-overlay.open{display:flex;}
-.modal-box{background:var(--surface);border:1px solid var(--gold);border-radius:16px;
-  width:100%;max-width:680px;max-height:88vh;overflow:hidden;display:flex;flex-direction:column;
-  animation:mIn .25s ease;box-shadow:0 24px 60px rgba(0,0,0,.7);}
-@keyframes mIn{from{opacity:0;transform:scale(.92) translateY(14px);}to{opacity:1;transform:scale(1) translateY(0);}}
-.modal-head{padding:18px 20px 14px;border-bottom:1px solid var(--border);
-  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-shrink:0;}
-.modal-badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:1px;
-  padding:2px 10px;border-radius:20px;margin-bottom:6px;}
-.modal-title{font-family:'Noto Serif Thai',serif;font-size:1.2rem;font-weight:700;
-  color:var(--gold);line-height:1.4;}
-.modal-sub{font-size:.78rem;color:var(--dim2);margin-top:4px;}
-.modal-close{background:rgba(255,255,255,.07);border:1px solid var(--border);
-  color:var(--text);font-size:1rem;border-radius:8px;width:34px;height:34px;
-  cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  transition:background .2s;}
-.modal-close:hover{background:rgba(255,255,255,.15);}
-.modal-body{padding:18px 20px;overflow-y:auto;flex:1;}
-.modal-law-text{background:rgba(240,192,64,.06);border:1px solid rgba(240,192,64,.25);
-  border-left:4px solid var(--gold);border-radius:10px;padding:16px;
-  font-size:.88rem;line-height:2.2;white-space:pre-wrap;}
-.modal-law-text .ml{color:var(--gold);font-weight:800;font-size:.92rem;display:block;margin-bottom:8px;}
-.modal-analysis{margin-top:12px;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);
-  border-radius:10px;padding:14px;font-size:.82rem;line-height:1.9;}
-.modal-analysis h4{color:var(--blue);font-size:.88rem;margin-bottom:8px;}
-.modal-penalty{margin-top:10px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);
-  border-radius:10px;padding:12px;font-size:.82rem;line-height:1.8;}
-.modal-penalty h4{color:var(--red);font-size:.88rem;margin-bottom:6px;}
-
-/* all-laws modal */
-.all-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-@media(max-width:480px){.all-grid{grid-template-columns:1fr;}}
-.al-item{background:var(--card);border-radius:10px;border:1px solid var(--border);
-  padding:12px 14px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:10px;}
-.al-item:hover{border-color:var(--gold);background:rgba(240,192,64,.07);transform:translateY(-2px);}
-.al-num{font-weight:800;font-size:1.05rem;min-width:44px;padding:4px 0;
-  text-align:center;border-radius:6px;flex-shrink:0;}
-.al-info h4{font-size:.84rem;font-weight:700;margin-bottom:3px;}
-.al-info p{font-size:.74rem;color:var(--dim2);line-height:1.5;}
-
-/* tags */
-.tag{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;
-  border-radius:5px;border:1px solid;margin:2px 2px 2px 0;vertical-align:middle;}
-
-/* row highlight */
-.row-p td{background:rgba(168,85,247,.05);}
-.row-b td{background:rgba(59,130,246,.05);}
-.row-g td{background:rgba(34,197,94,.05);}
+  /* Footer */
+  .footer {
+    font-size: 11px;
+    color: var(--text-dim);
+    opacity: 0.5;
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+  }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<div class="header">
-  <div class="header-badge">ชุดวิชา 41216 กฎหมายอาญา · มสธ. · หน่วยที่ 3</div>
-  <h1>⚔️ Mind Map การพยายามกระทำความผิด</h1>
-  <p class="sub">มาตรา 80 · 81 · 82 — ภาคบทบัญญัติทั่วไป</p>
-  <div class="header-matra">
-    <div class="hm-badge" style="background:rgba(168,85,247,.15);border-color:var(--purple);color:var(--purple)" onclick="openLaw(80)">ม.80</div>
-    <div class="hm-badge" style="background:rgba(59,130,246,.15);border-color:var(--blue);color:var(--blue)" onclick="openLaw(81)">ม.81</div>
-    <div class="hm-badge" style="background:rgba(34,197,94,.15);border-color:var(--green);color:var(--green)" onclick="openLaw(82)">ม.82</div>
+<div class="container">
+
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line right"></div>
   </div>
+
+  <div class="icon-wrap">
+    <!-- Lock icon -->
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>
+  </div>
+
+  <p class="label">Smart Law STOU</p>
+  <h1>Mind Map <span>กฎหมาย มสธ.</span></h1>
+  <p class="subtitle">
+    เนื้อหานี้ได้ย้ายไปยังช่องทางพิเศษแล้วครับ<br>
+    สามารถเข้าถึง Mind Map และสรุปกฎหมาย<br>
+    ได้ที่เพจ Facebook ด้านล่างนี้
+  </p>
+
+  <div class="card">
+    <p class="card-label">เข้าถึงเนื้อหาได้ที่</p>
+    <div class="page-row">
+      <div class="page-avatar">f</div>
+      <div class="page-info">
+        <div class="page-name">Smart Law STOU</div>
+        <div class="page-desc">เรียนกฎหมายฉบับอัจฉริยะ</div>
+      </div>
+    </div>
+    <a class="btn" href="https://www.facebook.com/profile.php?id=61572221952896" target="_blank" rel="noopener">
+      <!-- Facebook logo -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+      </svg>
+      ไปที่เพจ Facebook
+    </a>
+  </div>
+
+  <p class="footer">Smart Law STOU © 2025 · เรียนกฎหมาย มสธ. ฉบับอัจฉริยะ</p>
+
 </div>
 
-<!-- ===== NAV ===== -->
-<div class="nav-row">
-  <button class="nav-btn active" id="nb-ov" style="border-color:var(--gold);color:var(--gold);background:rgba(240,192,64,.15)" onclick="showSec('ov')">🗺️ ภาพรวม</button>
-  <button class="nav-btn" id="nb-law" style="border-color:var(--purple);color:var(--purple)" onclick="showSec('law')">📜 ตัวบทกฎหมาย</button>
-  <button class="nav-btn" id="nb-cmp" style="border-color:var(--cyan);color:var(--cyan)" onclick="showSec('cmp')">⚖️ เปรียบเทียบ</button>
-  <button class="nav-btn" id="nb-quiz" style="border-color:var(--orange);color:var(--orange)" onclick="showSec('quiz')">📝 โจทย์ตุ๊กตา</button>
-</div>
-
-<!-- ===== MAIN ===== -->
-<div class="main">
-
-<!-- =============================== OVERVIEW =============================== -->
-<div class="section show" id="sec-ov">
-  <div class="sec-head">
-    <div class="sec-icon" style="background:rgba(240,192,64,.15)">🗺️</div>
-    <div class="sec-title">
-      <h2 style="color:var(--gold)">ภาพรวม — การพยายามกระทำความผิด</h2>
-      <p>คลิกการ์ดเพื่อดูรายละเอียด · <em style="color:var(--gold)">คลิกเลขมาตราเพื่อดูตัวบท</em></p>
-    </div>
-  </div>
-
-  <!-- ความนำ -->
-  <div class="note" style="background:rgba(240,192,64,.06);border-color:rgba(240,192,64,.25)">
-    <strong style="color:var(--gold)">💡 หลักการพยายามกระทำความผิด</strong>
-    การลงโทษบุคคลที่มี<strong>เจตนาชั่วร้าย</strong>และได้<strong>ลงมือกระทำ</strong>แล้ว แม้ผลจะยังไม่เกิดหรือไม่สามารถเกิดได้อย่างแน่แท้ เนื่องจากยังไม่เกิดผล จึงต้องรู้ว่าผู้กระทำ<strong>มีเจตนาอะไร</strong> → <strong>การกระทำโดยประมาทจึงไม่มีการพยายาม</strong>
-  </div>
-
-  <!-- 3 overview cards -->
-  <div class="ov-grid" style="margin-top:14px;">
-    <div class="ov-card" onclick="showSec('law');setTimeout(()=>toggleLaw('lb80'),300)">
-      <div class="ov-top" style="border-color:rgba(168,85,247,.3)">
-        <div class="ov-emoji">🟣</div>
-        <div class="ov-info">
-          <div class="ov-num" style="color:var(--purple)"><span class="mn c-purple" onclick="e(event);openLaw(80)">80</span> — พยายามทั่วไป</div>
-          <div class="ov-name">ลงมือแล้ว ไม่บรรลุผลเพราะ<strong style="color:var(--text)">เหตุบังเอิญ</strong></div>
-        </div>
-      </div>
-      <div class="ov-body">
-        <div class="ov-row"><span class="ov-label">เจตนา</span><span>✅ ต้องมี</span></div>
-        <div class="ov-row"><span class="ov-label">ลงมือ</span><span>✅ ต้องลงมือแล้ว</span></div>
-        <div class="ov-row"><span class="ov-label">สาเหตุไม่สำเร็จ</span><span>เหตุบังเอิญ (ใดๆ ก็ได้)</span></div>
-        <div class="ov-row"><span class="ov-label">โทษ</span><span style="color:var(--purple);font-weight:800">2/3 ของโทษจริง</span></div>
-      </div>
-    </div>
-
-    <div class="ov-card" onclick="showSec('law');setTimeout(()=>toggleLaw('lb81'),300)">
-      <div class="ov-top" style="border-color:rgba(59,130,246,.3)">
-        <div class="ov-emoji">🔵</div>
-        <div class="ov-info">
-          <div class="ov-num" style="color:var(--blue)"><span class="mn c-blue" onclick="e(event);openLaw(81)">81</span> — ไม่บรรลุแน่แท้</div>
-          <div class="ov-name">ลงมือแล้ว แต่ไม่มีทางสำเร็จ<strong style="color:var(--text)">เลย</strong></div>
-        </div>
-      </div>
-      <div class="ov-body">
-        <div class="ov-row"><span class="ov-label">เจตนา</span><span>✅ ต้องมี</span></div>
-        <div class="ov-row"><span class="ov-label">ลงมือ</span><span>✅ ต้องลงมือแล้ว</span></div>
-        <div class="ov-row"><span class="ov-label">สาเหตุไม่สำเร็จ</span><span>ปัจจัย/วัตถุ เท่านั้น</span></div>
-        <div class="ov-row"><span class="ov-label">โทษ</span><span style="color:var(--blue);font-weight:800">≤ 1/2 ของโทษจริง</span></div>
-      </div>
-    </div>
-
-    <div class="ov-card" onclick="showSec('law');setTimeout(()=>toggleLaw('lb82'),300)">
-      <div class="ov-top" style="border-color:rgba(34,197,94,.3)">
-        <div class="ov-emoji">🟢</div>
-        <div class="ov-info">
-          <div class="ov-num" style="color:var(--green)"><span class="mn c-green" onclick="e(event);openLaw(82)">82</span> — ยับยั้ง/กลับใจ</div>
-          <div class="ov-name">ลงมือแล้ว แต่<strong style="color:var(--text)">ยับยั้งเอง</strong>ไม่ให้สำเร็จ</div>
-        </div>
-      </div>
-      <div class="ov-body">
-        <div class="ov-row"><span class="ov-label">เจตนา</span><span>✅ ต้องมี</span></div>
-        <div class="ov-row"><span class="ov-label">ลงมือ</span><span>✅ ต้องลงมือแล้ว</span></div>
-        <div class="ov-row"><span class="ov-label">สาเหตุไม่สำเร็จ</span><span>ผู้กระทำยับยั้งเอง</span></div>
-        <div class="ov-row"><span class="ov-label">โทษ</span><span style="color:var(--green);font-weight:800">ยกเว้นโทษ (ฐานพยายาม)</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Timeline: เส้นทางความรับผิด -->
-  <div class="sec-head" style="margin-top:10px">
-    <div class="sec-icon" style="background:rgba(20,184,166,.15)">🔗</div>
-    <div class="sec-title">
-      <h2 style="color:var(--teal)">เส้นทางความรับผิด — จากความคิดถึงความผิดสำเร็จ</h2>
-    </div>
-  </div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot" style="background:rgba(100,116,139,.15);border-color:var(--dim)">💭</div>
-      <div class="tl-content">
-        <h4 style="color:var(--dim2)">ขั้นที่ 1 — ความคิด (Intention)</h4>
-        <p>มีความคิดจะกระทำความผิดในใจ → <strong style="color:var(--green)">ไม่ผิด</strong> กฎหมายอาญาไม่ลงโทษเพียงความคิด</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" style="background:rgba(234,179,8,.15);border-color:var(--yellow)">🛠️</div>
-      <div class="tl-content">
-        <h4 style="color:var(--yellow)">ขั้นที่ 2 — ตระเตรียมการ (Preparation)</h4>
-        <p>จัดหาวัตถุ เตรียมสถานที่ วางแผน → <strong style="color:var(--green)">โดยทั่วไปไม่ผิด</strong> (เว้นแต่กฎหมายบัญญัติพิเศษ เช่น ม.107)</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" style="background:rgba(168,85,247,.15);border-color:var(--purple)">⚡</div>
-      <div class="tl-content">
-        <h4 style="color:var(--purple)">ขั้นที่ 3 — ลงมือกระทำ (Attempt) → <span class="mn c-purple" onclick="openLaw(80)" style="font-size:.85rem">80</span> / <span class="mn c-blue" onclick="openLaw(81)" style="font-size:.85rem">81</span> / <span class="mn c-green" onclick="openLaw(82)" style="font-size:.85rem">82</span></h4>
-        <p>ลงมือกระทำการตามเจตนาแล้ว แต่ความผิดยังไม่สำเร็จ → <strong style="color:var(--purple)">ผิดฐานพยายาม</strong> ตามมาตรา 80, 81 หรือ 82</p>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot" style="background:rgba(239,68,68,.15);border-color:var(--red)">🎯</div>
-      <div class="tl-content">
-        <h4 style="color:var(--red)">ขั้นที่ 4 — ความผิดสำเร็จ (Consummation)</h4>
-        <p>กระทำครบองค์ประกอบ ผลเกิดขึ้นครบถ้วน → <strong style="color:var(--red)">รับโทษเต็ม</strong> ตามมาตรานั้นๆ (เช่น ม.288 ฆ่า)</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- โทษสรุป -->
-  <div class="note" style="background:rgba(168,85,247,.06);border-color:rgba(168,85,247,.25);margin-top:6px">
-    <strong style="color:var(--purple)">📌 สูตรจำโทษ</strong>
-    <span class="mn c-purple" onclick="openLaw(80)">80</span> → <strong>โทษ × 2/3</strong> (มีโอกาสสำเร็จ โทษจึงหนักกว่า) &nbsp;|&nbsp;
-    <span class="mn c-blue" onclick="openLaw(81)">81</span> → <strong>โทษ ≤ 1/2</strong> (ไม่มีทางสำเร็จ โทษจึงเบากว่า) &nbsp;|&nbsp;
-    <span class="mn c-green" onclick="openLaw(82)">82</span> → <strong>ยกเว้นโทษ</strong> (กลับใจเอง กฎหมายให้รางวัล)
-  </div>
-</div>
-
-<!-- =============================== LAW =============================== -->
-<div class="section" id="sec-law">
-  <div class="sec-head">
-    <div class="sec-icon" style="background:rgba(168,85,247,.15)">📜</div>
-    <div class="sec-title">
-      <h2 style="color:var(--purple)">ตัวบทกฎหมาย — มาตรา 80, 81, 82</h2>
-      <p>คลิกที่มาตราเพื่อขยาย/ย่อ · <em style="color:var(--gold)">คลิกเลขสีเพื่อเปิด Popup ตัวบท</em></p>
-    </div>
-  </div>
-
-  <!-- ม.80 -->
-  <div class="law-block" id="lb80">
-    <div class="law-block-head" onclick="toggleLaw('lb80')">
-      <span class="lb-num c-purple" style="font-size:1rem" onclick="e(event);openLaw(80)">ม.80</span>
-      <div>
-        <div class="lb-title">มาตรา 80 — การพยายามกระทำความผิดทั่วไป</div>
-        <div class="lb-sub">ลงมือแล้ว ไม่บรรลุผลเพราะเหตุบังเอิญ · โทษ 2/3</div>
-      </div>
-      <span class="lb-chevron">▼</span>
-    </div>
-    <div class="law-block-body">
-      <div class="law-text"><span class="law-label">📜 ตัวบทกฎหมาย</span>มาตรา ๘๐
-
-    ผู้ใดลงมือกระทำความผิดแต่กระทำไปไม่ตลอด หรือกระทำไปตลอดแล้วแต่การกระทำนั้นไม่บรรลุผล ผู้นั้นพยายามกระทำความผิด
-
-    ผู้พยายามกระทำความผิด ต้องระวางโทษสองในสามส่วนของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น</div>
-      <div class="analysis">
-        <h4>🔍 อธิบายองค์ประกอบ ม.80</h4>
-        <strong>องค์ประกอบที่ต้องครบ 3 ข้อ:</strong><br>
-        <strong>1. มีเจตนากระทำความผิด</strong> — ต้องมีเจตนาตั้งแต่ต้น (ไม่มีพยายามประมาท)<br>
-        <strong>2. ได้ลงมือกระทำแล้ว</strong> — ต้องถึงขั้น "ลงมือ" ไม่ใช่แค่ตระเตรียม<br>
-        <strong>3. ไม่บรรลุผลเพราะเหตุบังเอิญ</strong> — มี 2 กรณี:<br>
-        &nbsp;&nbsp;&nbsp;• กระทำไปไม่ตลอด (มีเหตุขัดขวาง)<br>
-        &nbsp;&nbsp;&nbsp;• กระทำตลอดแล้ว แต่ผลไม่เกิด (เช่น แพทย์ช่วยทัน)<br><br>
-        <strong>⚠️ "เหตุบังเอิญ"</strong> หมายถึงเหตุใดก็ได้ที่มาขัดขวาง รวมทั้งเหตุจากปัจจัย วัตถุ หรืออื่นๆ (กว้างกว่า ม.81)
-      </div>
-      <div class="penalty-box">
-        <h4>⚖️ อัตราโทษ ม.80</h4>
-        ระวางโทษ <strong>2 ใน 3 ส่วน</strong> ของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น<br>
-        <em>ตัวอย่าง: พยายามฆ่า (ม.288 โทษสูงสุด 20 ปี) → รับโทษไม่เกิน 13 ปี 4 เดือน</em>
-      </div>
-    </div>
-  </div>
-
-  <!-- ม.81 -->
-  <div class="law-block" id="lb81">
-    <div class="law-block-head" onclick="toggleLaw('lb81')">
-      <span class="lb-num c-blue" style="font-size:1rem" onclick="e(event);openLaw(81)">ม.81</span>
-      <div>
-        <div class="lb-title">มาตรา 81 — พยายามที่ไม่สามารถบรรลุผลได้อย่างแน่แท้</div>
-        <div class="lb-sub">ลงมือแล้ว แต่ปัจจัย/วัตถุทำให้ไม่มีทางสำเร็จเลย · โทษ ≤ 1/2</div>
-      </div>
-      <span class="lb-chevron">▼</span>
-    </div>
-    <div class="law-block-body">
-      <div class="law-text"><span class="law-label">📜 ตัวบทกฎหมาย</span>มาตรา ๘๑
-
-    ถ้าได้กระทำโดยตั้งใจจะกระทำความผิด และการกระทำนั้นไม่สามารถจะบรรลุผลได้อย่างแน่แท้ เพราะเหตุปัจจัยซึ่งใช้ในการกระทำหรือวัตถุที่มุ่งหมายกระทำต่อ ผู้กระทำต้องระวางโทษไม่เกินกึ่งหนึ่งของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น
-
-    ถ้าการกระทำดังกล่าวในวรรคแรกได้กระทำไปโดยความเชื่ออย่างงมงาย ศาลจะไม่ลงโทษก็ได้</div>
-      <div class="analysis">
-        <h4>🔍 อธิบายองค์ประกอบ ม.81</h4>
-        <strong>ต้องผ่านองค์ประกอบ ม.80 ก่อน แล้วเพิ่มเงื่อนไขพิเศษ:</strong><br>
-        <strong>ไม่บรรลุผลอย่างแน่แท้</strong> เพราะสาเหตุใดสาเหตุหนึ่งต่อไปนี้เท่านั้น:<br><br>
-        <strong>① ปัจจัยที่ใช้ในการกระทำ</strong> — เช่น ปืนไม่มีกระสุนบรรจุ, ยาพิษไม่มีฤทธิ์<br>
-        <strong>② วัตถุที่มุ่งหมายกระทำต่อ</strong> — เช่น เหยื่อไม่อยู่บ้านมาหลายเดือนแล้ว, เหยื่อตายก่อนแล้ว<br><br>
-        <span style="color:var(--yellow)">⚠️ ถ้าสาเหตุไม่บรรลุผลมาจากอย่างอื่น (ไม่ใช่ 2 ข้อนี้) → ต้องปรับ ม.80 แทน</span><br><br>
-        <strong>งมงาย (วรรค 2):</strong> กระทำด้วยความเชื่อไสยศาสตร์ → ศาลอาจไม่ลงโทษเลย
-      </div>
-      <div class="penalty-box">
-        <h4>⚖️ อัตราโทษ ม.81</h4>
-        ระวางโทษ<strong>ไม่เกินกึ่งหนึ่ง</strong> ของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น<br>
-        วรรค 2 (งมงาย): ศาล<strong>จะไม่ลงโทษก็ได้</strong>
-      </div>
-    </div>
-  </div>
-
-  <!-- ม.82 -->
-  <div class="law-block" id="lb82">
-    <div class="law-block-head" onclick="toggleLaw('lb82')">
-      <span class="lb-num c-green" style="font-size:1rem" onclick="e(event);openLaw(82)">ม.82</span>
-      <div>
-        <div class="lb-title">มาตรา 82 — ยับยั้งหรือกลับใจแก้ไขไม่ให้บรรลุผล</div>
-        <div class="lb-sub">ลงมือแล้ว แต่ยับยั้งเอง → ยกเว้นโทษฐานพยายาม</div>
-      </div>
-      <span class="lb-chevron">▼</span>
-    </div>
-    <div class="law-block-body">
-      <div class="law-text"><span class="law-label">📜 ตัวบทกฎหมาย</span>มาตรา ๘๒
-
-    ถ้าผู้ที่ได้ลงมือกระทำความผิดได้ยับยั้งเสียเองไม่กระทำการให้ตลอด หรือได้กลับใจแก้ไขไม่ให้การกระทำนั้นบรรลุผล ผู้นั้นไม่ต้องรับโทษสำหรับการพยายามกระทำความผิดนั้น
-
-    แต่ถ้าการที่ได้กระทำไปแล้วต้องตามบทกฎหมายที่บัญญัติเป็นความผิด ผู้นั้นต้องรับโทษสำหรับการกระทำนั้น</div>
-      <div class="analysis">
-        <h4>🔍 อธิบายองค์ประกอบ ม.82</h4>
-        <strong>มี 2 กรณีที่ได้รับยกเว้น:</strong><br>
-        <strong>① ยับยั้งเสียเอง</strong> — ลงมือแล้วแต่หยุดกระทำเองกลางคัน โดยสมัครใจ<br>
-        <strong>② กลับใจแก้ไข</strong> — กระทำตลอดแล้ว แต่กลับใจแก้ไขไม่ให้บรรลุผล (เช่น รีบพาส่งโรงพยาบาล)<br><br>
-        <strong>⚠️ ข้อยกเว้นสำคัญ (วรรค 2):</strong><br>
-        ถ้าการกระทำที่ทำไปแล้ว<em>เป็นความผิดฐานอื่นในตัวเอง</em> → ยังต้องรับโทษฐานนั้น<br>
-        <em>ตัวอย่าง: ยิงปืนแล้วยับยั้ง แต่กระสุนถูกคนอื่นบาดเจ็บ → ยังผิด ม.295</em>
-      </div>
-      <div class="penalty-box">
-        <h4>⚖️ ผลทางกฎหมาย ม.82</h4>
-        <strong>ยกเว้นโทษ</strong> สำหรับการพยายามกระทำความผิดนั้น<br>
-        แต่ยังรับผิดในความผิดอื่นที่กระทำไปแล้วและเป็นความผิดในตัวเอง
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- =============================== COMPARE =============================== -->
-<div class="section" id="sec-cmp">
-  <div class="sec-head">
-    <div class="sec-icon" style="background:rgba(6,182,212,.15)">⚖️</div>
-    <div class="sec-title">
-      <h2 style="color:var(--cyan)">เปรียบเทียบ ม.80 vs ม.81 vs ม.82</h2>
-      <p>ตารางเปรียบเทียบและจุดที่สับสนบ่อย · <em style="color:var(--gold)">คลิกเลขมาตราเพื่อดูตัวบท</em></p>
-    </div>
-  </div>
-
-  <!-- compare boxes -->
-  <div class="compare-grid">
-    <div class="cmp-box" style="border-color:var(--purple)">
-      <div class="cmp-badge" style="background:var(--purple);color:#000"><span onclick="openLaw(80)" style="cursor:pointer">ม.80</span></div>
-      <div class="cmp-title" style="color:var(--purple)">พยายามทั่วไป</div>
-      <div class="cmp-item"><strong>เจตนา</strong> ต้องมี</div>
-      <div class="cmp-item"><strong>ลงมือ</strong> ต้องลงมือแล้ว</div>
-      <div class="cmp-item"><strong>สาเหตุ</strong> เหตุบังเอิญ<em>ใดๆ</em></div>
-      <div class="cmp-item"><strong>ความเป็นไปได้</strong> อาจสำเร็จได้</div>
-      <div class="cmp-item"><strong>โทษ</strong> ⅔ ของโทษจริง</div>
-    </div>
-    <div class="cmp-box" style="border-color:var(--blue)">
-      <div class="cmp-badge" style="background:var(--blue);color:#000"><span onclick="openLaw(81)" style="cursor:pointer">ม.81</span></div>
-      <div class="cmp-title" style="color:var(--blue)">ไม่บรรลุแน่แท้</div>
-      <div class="cmp-item"><strong>เจตนา</strong> ต้องมี</div>
-      <div class="cmp-item"><strong>ลงมือ</strong> ต้องลงมือแล้ว</div>
-      <div class="cmp-item"><strong>สาเหตุ</strong> ปัจจัย/วัตถุ<em>เท่านั้น</em></div>
-      <div class="cmp-item"><strong>ความเป็นไปได้</strong> ไม่มีทางสำเร็จเลย</div>
-      <div class="cmp-item"><strong>โทษ</strong> ≤ ½ ของโทษจริง</div>
-    </div>
-    <div class="cmp-box" style="border-color:var(--green)">
-      <div class="cmp-badge" style="background:var(--green);color:#000"><span onclick="openLaw(82)" style="cursor:pointer">ม.82</span></div>
-      <div class="cmp-title" style="color:var(--green)">ยับยั้ง/กลับใจ</div>
-      <div class="cmp-item"><strong>เจตนา</strong> ต้องมี</div>
-      <div class="cmp-item"><strong>ลงมือ</strong> ต้องลงมือแล้ว</div>
-      <div class="cmp-item"><strong>สาเหตุ</strong> ผู้กระทำยับยั้งเอง</div>
-      <div class="cmp-item"><strong>ความเป็นไปได้</strong> อาจสำเร็จได้ แต่เลือกหยุด</div>
-      <div class="cmp-item"><strong>โทษ</strong> ยกเว้นโทษพยายาม</div>
-    </div>
-  </div>
-
-  <!-- ตารางเปรียบเทียบ -->
-  <div class="sec-head" style="margin-top:16px">
-    <div class="sec-icon" style="background:rgba(240,192,64,.1)">📊</div>
-    <div class="sec-title"><h2 style="color:var(--gold)">ตาราง ข้อเหมือน – ข้อต่าง (ออกสอบบ่อย!)</h2></div>
-  </div>
-  <div style="overflow-x:auto">
-    <table class="cmp-table">
-      <thead>
-        <tr>
-          <th style="text-align:left;color:var(--gold)">ประเด็น</th>
-          <th style="color:var(--purple)"><span class="mn c-purple" onclick="openLaw(80)">80</span></th>
-          <th style="color:var(--blue)"><span class="mn c-blue" onclick="openLaw(81)">81</span></th>
-          <th style="color:var(--green)"><span class="mn c-green" onclick="openLaw(82)">82</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="row-p"><td>มีเจตนา</td><td>✅</td><td>✅</td><td>✅</td></tr>
-        <tr class="row-b"><td>ลงมือกระทำแล้ว</td><td>✅</td><td>✅</td><td>✅</td></tr>
-        <tr class="row-g"><td>ความผิดไม่สำเร็จ</td><td>✅</td><td>✅</td><td>✅</td></tr>
-        <tr><td>สาเหตุไม่สำเร็จ</td><td style="color:var(--purple)">เหตุบังเอิญใดๆ</td><td style="color:var(--blue)">ปัจจัย/วัตถุเท่านั้น</td><td style="color:var(--green)">ยับยั้งเอง</td></tr>
-        <tr><td>มีโอกาสสำเร็จ</td><td>✅ มีโอกาส</td><td>❌ ไม่มีเลย</td><td>✅ มีโอกาส (แต่หยุด)</td></tr>
-        <tr><td>อัตราโทษ</td>
-          <td><span class="tag" style="border-color:var(--purple);color:var(--purple)">⅔ ของโทษ</span></td>
-          <td><span class="tag" style="border-color:var(--blue);color:var(--blue)">≤ ½ ของโทษ</span></td>
-          <td><span class="tag" style="border-color:var(--green);color:var(--green)">ยกเว้นโทษ</span></td>
-        </tr>
-        <tr><td>ปัจจัยพิเศษ</td><td>—</td><td>งมงาย → ศาลอาจไม่ลงโทษ</td><td>ยังผิดความผิดอื่นที่ทำไปแล้ว</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- จุดสับสนบ่อย -->
-  <div class="sec-head" style="margin-top:16px">
-    <div class="sec-icon" style="background:rgba(249,115,22,.15)">⚠️</div>
-    <div class="sec-title"><h2 style="color:var(--orange)">จุดที่สับสนบ่อย — ม.80 vs ม.81</h2></div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px">
-    <div class="note" style="background:rgba(168,85,247,.06);border-color:rgba(168,85,247,.3)">
-      <strong style="color:var(--purple)">กรณี ม.80 (เหตุบังเอิญ)</strong>
-      แดงยิงดำ กระสุนถูกแต่ดำไม่ตาย เพราะ<strong>แพทย์ช่วยทัน</strong> → ม.80<br><br>
-      แดงยิงไปที่เตียงดำ ดำ<strong>บังเอิญลุกไปเข้าห้องน้ำก่อน</strong> → ม.80<br><br>
-      กระสุน<strong>ลั่นออกมาแต่พลาด</strong>ไม่ถูก → ม.80
-    </div>
-    <div class="note" style="background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.3)">
-      <strong style="color:var(--blue)">กรณี ม.81 (แน่แท้ว่าไม่สำเร็จ)</strong>
-      แดงยิงปืน<strong>ที่ไม่มีกระสุนบรรจุเลย</strong> → ม.81<br><br>
-      แดงยิงเข้าบ้าน แต่ดำ<strong>ย้ายไปต่างจังหวัดนานแล้ว</strong> → ม.81<br><br>
-      ใช้<strong>วัตถุที่ไม่ใช่ยาพิษ</strong>ใส่อาหาร คิดว่าเป็นยาพิษ → ม.81
-    </div>
-  </div>
-  <div class="note" style="background:rgba(234,179,8,.06);border-color:rgba(234,179,8,.3);margin-top:10px">
-    <strong style="color:var(--yellow)">🔑 วิธีแยก ม.80 / ม.81 แบบรวดเร็ว</strong>
-    ถามตัวเองว่า "ถ้าไม่มีอะไรมาขัดขวาง การกระทำนี้<strong>อาจสำเร็จได้ไหม?</strong>"<br>
-    → ถ้าใช่ = <span class="mn c-purple" onclick="openLaw(80)" style="font-size:.85rem">80</span> &nbsp;|&nbsp; ถ้าไม่มีทางสำเร็จเลยเพราะปัจจัยหรือวัตถุ = <span class="mn c-blue" onclick="openLaw(81)" style="font-size:.85rem">81</span>
-  </div>
-</div>
-
-<!-- =============================== QUIZ =============================== -->
-<div class="section" id="sec-quiz">
-  <div class="sec-head">
-    <div class="sec-icon" style="background:rgba(249,115,22,.15)">📝</div>
-    <div class="sec-title">
-      <h2 style="color:var(--orange)">โจทย์ตุ๊กตา — ฝึกเขียนตอบข้อสอบ</h2>
-      <p>กด "ดูแนวตอบ" เพื่อเปิดเฉลยแบบครบ 3 ส่วน · <em style="color:var(--gold)">ตามแนวข้อสอบ มสธ.</em></p>
-    </div>
-  </div>
-
-  <div class="quiz-grid">
-
-    <!-- Q1 -->
-    <div class="quiz-card">
-      <div class="quiz-head">
-        <span class="quiz-num c-purple">โจทย์ที่ 1</span>
-        <div class="quiz-q">นายแดงต้องการฆ่านายดำ จึงใช้ปืนยิงนายดำ 1 นัด กระสุนถูกนายดำที่หน้าอกซ้าย นายดำล้มลงหมดสติ แต่แพทย์ช่วยรักษาทันจึงรอดชีวิต <strong>นายแดงมีความผิดฐานใด?</strong></div>
-      </div>
-      <div class="quiz-body">
-        <div class="quiz-fact">📋 ข้อเท็จจริงสำคัญ: มีเจตนาฆ่า · ลงมือยิงแล้ว · กระสุนถูกเหยื่อ · ไม่ตายเพราะแพทย์ช่วย (เหตุบังเอิญ)</div>
-        <div class="quiz-hint"><button class="quiz-btn" onclick="toggleQuiz('q1a')">💡 ดูแนวตอบ</button></div>
-        <div class="quiz-answer" id="q1a">
-          <div class="ans-part">
-            <span class="ans-label">① หลักกฎหมาย</span>
-            <div class="ans-text">กรณีตามปัญหา ประมวลกฎหมายอาญา <span class="mn c-red" style="font-size:.8rem" onclick="openLaw(288)">288</span> วางหลักไว้ว่า ผู้ใดฆ่าผู้อื่น ต้องระวางโทษประหารชีวิต จำคุกตลอดชีวิต หรือจำคุกตั้งแต่สิบห้าปีถึงยี่สิบปี<br><br>
-            และ <span class="mn c-purple" style="font-size:.8rem" onclick="openLaw(80)">80</span> วางหลักไว้ว่า ผู้ใดลงมือกระทำความผิดแต่กระทำไปไม่ตลอด หรือกระทำไปตลอดแล้วแต่การกระทำนั้นไม่บรรลุผล ผู้นั้นพยายามกระทำความผิด รับโทษ 2 ใน 3 ของโทษที่กำหนด</div>
-          </div>
-          <div class="ans-part">
-            <span class="ans-label">② วินิจฉัย</span>
-            <div class="ans-text"><strong>ส่วนที่ 1 — อธิบายหลัก:</strong> การฆ่าตามมาตรา 288 ต้องประกอบด้วยเจตนา (ประสงค์ต่อผลหรือย่อมเล็งเห็นผล) ว่าจะทำให้ผู้อื่นถึงแก่ความตาย และผลคือการตายของผู้นั้น หากกระทำครบองค์ประกอบแต่ผลไม่บรรลุเพราะเหตุบังเอิญ ก็เป็นการพยายามตาม ม.80<br><br>
-            <strong>ส่วนที่ 2 — ปรับบท:</strong> จากข้อเท็จจริง นายแดงใช้ปืนยิงนายดำโดยเล็งยิงถูกหน้าอก ย่อมแสดงให้เห็นว่านายแดงมีเจตนาฆ่านายดำ (ประสงค์ต่อผล) ได้ลงมือกระทำแล้ว การที่นายดำไม่ถึงแก่ความตายเป็นเพราะแพทย์ช่วยรักษาทัน ซึ่งถือเป็นเหตุบังเอิญมาขัดขวางผล</div>
-          </div>
-          <div class="ans-verdict">
-            ✅ สรุป: นายแดงมีความผิดฐาน<strong>พยายามฆ่านายดำ</strong> ตามประมวลกฎหมายอาญา มาตรา 288 ประกอบมาตรา 80 ต้องรับโทษ 2 ใน 3 ของโทษตามมาตรา 288
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Q2 -->
-    <div class="quiz-card">
-      <div class="quiz-head">
-        <span class="quiz-num c-blue">โจทย์ที่ 2</span>
-        <div class="quiz-q">นายขาวต้องการฆ่านายเขียว จึงใช้ปืนที่ตนเข้าใจว่ามีกระสุนบรรจุพร้อมยิงไปที่นายเขียว แต่ปืนไม่ลั่น เพราะในความเป็นจริงปืนนั้นไม่มีกระสุนบรรจุอยู่เลย <strong>นายขาวมีความผิดฐานใด?</strong></div>
-      </div>
-      <div class="quiz-body">
-        <div class="quiz-fact">📋 ข้อเท็จจริงสำคัญ: มีเจตนาฆ่า · ลงมือแล้ว · ปืนไม่มีกระสุน (ปัจจัยที่ใช้ทำให้ไม่สำเร็จ) · ไม่มีทางสำเร็จเลย</div>
-        <div class="quiz-hint"><button class="quiz-btn" onclick="toggleQuiz('q2a')">💡 ดูแนวตอบ</button></div>
-        <div class="quiz-answer" id="q2a">
-          <div class="ans-part">
-            <span class="ans-label">① หลักกฎหมาย</span>
-            <div class="ans-text">กรณีตามปัญหา ประมวลกฎหมายอาญา <span class="mn c-blue" style="font-size:.8rem" onclick="openLaw(81)">81</span> วางหลักไว้ว่า ถ้าได้กระทำโดยตั้งใจจะกระทำความผิด และการกระทำนั้นไม่สามารถจะบรรลุผลได้อย่างแน่แท้ เพราะเหตุ<strong>ปัจจัยซึ่งใช้ในการกระทำ</strong>หรือวัตถุที่มุ่งหมายกระทำต่อ ผู้กระทำต้องระวางโทษไม่เกินกึ่งหนึ่งของโทษที่กฎหมายกำหนดไว้</div>
-          </div>
-          <div class="ans-part">
-            <span class="ans-label">② วินิจฉัย</span>
-            <div class="ans-text"><strong>ส่วนที่ 1 — อธิบายหลัก:</strong> การพยายามตาม ม.81 เกิดขึ้นเมื่อผู้กระทำลงมือแล้ว แต่การกระทำนั้นไม่สามารถบรรลุผลได้อย่างแน่แท้ เพราะปัจจัยที่ใช้ (เช่น ปืนไม่มีกระสุน) หรือวัตถุ (เช่น เหยื่อไม่อยู่) ซึ่งต่างจาก ม.80 ที่การกระทำยังมีโอกาสสำเร็จได้<br><br>
-            <strong>ส่วนที่ 2 — ปรับบท:</strong> จากข้อเท็จจริง นายขาวมีเจตนาฆ่านายเขียวและได้ลงมือยิงแล้ว แต่ปืนที่นายขาวใช้ไม่มีกระสุนบรรจุอยู่เลย การที่ปืนไม่ลั่นเป็นเพราะ<strong>ปัจจัยที่ใช้ในการกระทำ</strong> (ตัวปืน/กระสุน) ไม่สามารถทำให้เกิดผลสำเร็จได้อย่างแน่แท้ ไม่ใช่เหตุบังเอิญที่มาขัดขวาง</div>
-          </div>
-          <div class="ans-verdict">
-            ✅ สรุป: นายขาวมีความผิดฐาน<strong>พยายามฆ่านายเขียว ที่ไม่สามารถบรรลุผลได้อย่างแน่แท้</strong> ตามประมวลกฎหมายอาญา มาตรา 288 ประกอบมาตรา 81 รับโทษไม่เกิน ½ ของโทษ ม.288
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Q3 -->
-    <div class="quiz-card">
-      <div class="quiz-head">
-        <span class="quiz-num c-green">โจทย์ที่ 3</span>
-        <div class="quiz-q">นายดำต้องการฆ่านายเหลือง จึงจ้องปืนจะยิง แต่เห็นนายเหลืองกำลังอุ้มลูกเล็กอยู่ นายดำเกิดสงสารลูก จึงเอาปืนลงและเดินหนีไป โดยนายเหลืองไม่รู้ตัวเลย <strong>นายดำมีความผิดฐานใด?</strong></div>
-      </div>
-      <div class="quiz-body">
-        <div class="quiz-fact">📋 ข้อเท็จจริงสำคัญ: มีเจตนาฆ่า · ลงมือจ้องปืนแล้ว · ยับยั้งเองเพราะสงสาร (สมัครใจ) · เหยื่อไม่ได้รับอันตราย</div>
-        <div class="quiz-hint"><button class="quiz-btn" onclick="toggleQuiz('q3a')">💡 ดูแนวตอบ</button></div>
-        <div class="quiz-answer" id="q3a">
-          <div class="ans-part">
-            <span class="ans-label">① หลักกฎหมาย</span>
-            <div class="ans-text">กรณีตามปัญหา ประมวลกฎหมายอาญา <span class="mn c-green" style="font-size:.8rem" onclick="openLaw(82)">82</span> วางหลักไว้ว่า ถ้าผู้ที่ได้ลงมือกระทำความผิดได้<strong>ยับยั้งเสียเองไม่กระทำการให้ตลอด</strong> หรือได้กลับใจแก้ไขไม่ให้การกระทำนั้นบรรลุผล ผู้นั้นไม่ต้องรับโทษสำหรับการพยายามกระทำความผิดนั้น</div>
-          </div>
-          <div class="ans-part">
-            <span class="ans-label">② วินิจฉัย</span>
-            <div class="ans-text"><strong>ส่วนที่ 1 — อธิบายหลัก:</strong> การยับยั้งตาม ม.82 ต้องเป็นการยับยั้งโดย<em>สมัครใจ</em> ไม่ใช่ถูกบังคับหรือมีเหตุขัดขวาง หากยับยั้งเองได้รับยกเว้นโทษฐานพยายาม อย่างไรก็ดียังต้องรับผิดในความผิดอื่นที่กระทำไปแล้ว<br><br>
-            <strong>ส่วนที่ 2 — ปรับบท:</strong> จากข้อเท็จจริง นายดำได้ลงมือถึงขั้นจ้องปืนจะยิงแล้ว ถือว่าลงมือกระทำแล้ว แต่นายดำเลือก<strong>ยับยั้งเสียเองโดยสมัครใจ</strong>เพราะสงสาร ไม่ใช่เพราะมีใครมาขัดขวาง ทั้งนายเหลืองก็ไม่ได้รับอันตรายใดๆ</div>
-          </div>
-          <div class="ans-verdict">
-            ✅ สรุป: นายดำ<strong>ได้รับยกเว้นโทษ</strong>สำหรับการพยายามฆ่านายเหลือง ตามประมวลกฎหมายอาญา มาตรา 82 เพราะยับยั้งเสียเองโดยสมัครใจ และไม่มีความผิดอื่นที่กระทำไปแล้วที่ต้องรับผิด
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Q4 -->
-    <div class="quiz-card">
-      <div class="quiz-head">
-        <span class="quiz-num c-gold">โจทย์ที่ 4 (ยาก)</span>
-        <div class="quiz-q">นายเมฆเชื่อเรื่องไสยศาสตร์ จึงใช้ตุ๊กตาแทนนายฝนแล้วเอาเข็มแทงหัวใจตุ๊กตา โดยเชื่อว่านายฝนจะตายตามตุ๊กตา แต่นายฝนปลอดภัยดี <strong>นายเมฆมีความผิดฐานใด?</strong></div>
-      </div>
-      <div class="quiz-body">
-        <div class="quiz-fact">📋 ข้อเท็จจริงสำคัญ: มีเจตนาฆ่า · กระทำผ่านตุ๊กตา (ไม่มีทางสำเร็จเลย) · กระทำด้วยความเชื่อ<strong>งมงาย</strong></div>
-        <div class="quiz-hint"><button class="quiz-btn" onclick="toggleQuiz('q4a')">💡 ดูแนวตอบ</button></div>
-        <div class="quiz-answer" id="q4a">
-          <div class="ans-part">
-            <span class="ans-label">① หลักกฎหมาย</span>
-            <div class="ans-text">กรณีตามปัญหา ประมวลกฎหมายอาญา <span class="mn c-blue" style="font-size:.8rem" onclick="openLaw(81)">81</span> วรรคสอง วางหลักไว้ว่า ถ้าการกระทำดังกล่าวในวรรคแรกได้กระทำไปโดย<strong>ความเชื่ออย่างงมงาย</strong> ศาลจะไม่ลงโทษก็ได้</div>
-          </div>
-          <div class="ans-part">
-            <span class="ans-label">② วินิจฉัย</span>
-            <div class="ans-text"><strong>ส่วนที่ 1 — อธิบายหลัก:</strong> กรณีตาม ม.81 วรรคสอง การกระทำที่ไม่สามารถบรรลุผลได้อย่างแน่แท้ซึ่งกระทำด้วยความเชื่องมงาย (เช่น ไสยศาสตร์) กฎหมายให้ดุลพินิจแก่ศาลว่าจะลงโทษหรือไม่ เพราะการกระทำเช่นนั้นไม่อาจก่อให้เกิดอันตรายแก่สังคมได้จริง<br><br>
-            <strong>ส่วนที่ 2 — ปรับบท:</strong> จากข้อเท็จจริง นายเมฆมีเจตนาฆ่านายฝน ได้ลงมือแทงตุ๊กตา แต่การแทงตุ๊กตา<strong>ไม่มีทางทำให้นายฝนตายได้อย่างแน่แท้</strong>ไม่ว่ากรณีใด เพราะปัจจัยที่ใช้ (ตุ๊กตาและเข็ม) ไม่สามารถส่งผลต่อชีวิตนายฝนได้เลย ยิ่งกว่านั้นนายเมฆกระทำด้วย<strong>ความเชื่อไสยศาสตร์</strong></div>
-          </div>
-          <div class="ans-verdict">
-            ✅ สรุป: นายเมฆมีความผิดฐาน<strong>พยายามฆ่านายฝน ที่ไม่สามารถบรรลุผลได้อย่างแน่แท้ โดยความเชื่องมงาย</strong> ตามมาตรา 288 ประกอบมาตรา 81 วรรคสอง ซึ่ง<strong>ศาลจะไม่ลงโทษก็ได้</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /quiz-grid -->
-</div><!-- /sec-quiz -->
-
-</div><!-- /main -->
-
-<footer>
-  <span>จัดทำโดย <strong style="color:var(--text)">จิราเมธ โปติ๊บ</strong> รหัสนักศึกษา <strong style="color:var(--gold)">6840030651</strong></span>
-  <span>มหาวิทยาลัยสุโขทัยธรรมาธิราช · ชุดวิชา 41216 กฎหมายอาญา · หน่วยที่ 3</span>
-  <div class="ver-badge">Version 0.0.0.1</div>
-</footer>
-
-<!-- ===== LAW MODAL ===== -->
-<div class="modal-overlay" id="lawModal" onclick="closeLawOv(event)">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-head">
-      <div style="flex:1">
-        <div class="modal-badge" id="mBadge"></div>
-        <div class="modal-title" id="mTitle"></div>
-        <div class="modal-sub" id="mSub"></div>
-      </div>
-      <button class="modal-close" onclick="closeModal('lawModal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-law-text" id="mText"></div>
-      <div class="modal-analysis" id="mAnalysis"></div>
-      <div class="modal-penalty" id="mPenalty"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-/* NAV */
-const SEC_COLORS={ov:'var(--gold)',law:'var(--purple)',cmp:'var(--cyan)',quiz:'var(--orange)'};
-function showSec(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('show'));
-  document.getElementById('sec-'+id).classList.add('show');
-  document.querySelectorAll('.nav-btn').forEach(b=>{
-    b.style.background='var(--card)';b.classList.remove('active');
-  });
-  const nb=document.getElementById('nb-'+id);
-  nb.style.background=`rgba(${id=='ov'?'240,192,64':id=='law'?'168,85,247':id=='cmp'?'6,182,212':'249,115,22'},.15)`;
-  nb.classList.add('active');
-}
-function e(ev){ev.stopPropagation();}
-
-/* TOGGLE LAW BLOCK */
-function toggleLaw(id){
-  const block=document.getElementById(id);
-  const body=block.querySelector('.law-block-body');
-  const chevron=block.querySelector('.lb-chevron');
-  body.classList.toggle('open');
-  chevron.style.transform=body.classList.contains('open')?'rotate(180deg)':'rotate(0)';
-}
-
-/* TOGGLE QUIZ */
-function toggleQuiz(id){
-  const el=document.getElementById(id);
-  el.classList.toggle('show');
-  const btn=el.previousElementSibling.querySelector('.quiz-btn');
-  btn.textContent=el.classList.contains('show')?'🙈 ซ่อนแนวตอบ':'💡 ดูแนวตอบ';
-}
-
-/* LAW DATA */
-const LD={
-  80:{
-    badge:'ม.80 · พยายามทั่วไป',bc:'rgba(168,85,247,.2)',bt:'var(--purple)',
-    title:'มาตรา 80 — การพยายามกระทำความผิด (ทั่วไป)',
-    sub:'ประมวลกฎหมายอาญา ภาค 1 บทบัญญัติทั่วไป ลักษณะ 3 การพยายามกระทำความผิด',
-    text:`มาตรา ๘๐
-
-    ผู้ใดลงมือกระทำความผิดแต่กระทำไปไม่ตลอด หรือกระทำไปตลอดแล้วแต่การกระทำนั้นไม่บรรลุผล ผู้นั้นพยายามกระทำความผิด
-
-    ผู้พยายามกระทำความผิด ต้องระวางโทษสองในสามส่วนของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น`,
-    analysis:`<h4>🔍 องค์ประกอบความผิด</h4>
-<strong>1. มีเจตนากระทำความผิด</strong> — ต้องมีเจตนา ไม่มีพยายามโดยประมาท<br>
-<strong>2. ลงมือกระทำแล้ว</strong> — ต้องถึงขั้นลงมือ ไม่ใช่แค่ตระเตรียม<br>
-<strong>3. ไม่บรรลุผลเพราะเหตุบังเอิญ</strong> — 2 กรณี:<br>
-&nbsp;&nbsp;&nbsp;• กระทำไปไม่ตลอด (มีสิ่งขัดขวาง)<br>
-&nbsp;&nbsp;&nbsp;• กระทำตลอดแล้ว แต่ผลไม่เกิด<br><br>
-<strong>"เหตุบังเอิญ"</strong> ครอบคลุมกว้าง — จากปัจจัย วัตถุ หรือเหตุอื่นใดก็ได้`,
-    penalty:`<h4>⚖️ อัตราโทษ</h4>รับโทษ <strong>2 ใน 3 ส่วน</strong> ของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น`
-  },
-  81:{
-    badge:'ม.81 · ไม่บรรลุแน่แท้',bc:'rgba(59,130,246,.2)',bt:'var(--blue)',
-    title:'มาตรา 81 — พยายามที่ไม่สามารถบรรลุผลได้อย่างแน่แท้',
-    sub:'ประมวลกฎหมายอาญา ภาค 1 บทบัญญัติทั่วไป ลักษณะ 3 การพยายามกระทำความผิด',
-    text:`มาตรา ๘๑
-
-    ถ้าได้กระทำโดยตั้งใจจะกระทำความผิด และการกระทำนั้นไม่สามารถจะบรรลุผลได้อย่างแน่แท้ เพราะเหตุปัจจัยซึ่งใช้ในการกระทำหรือวัตถุที่มุ่งหมายกระทำต่อ ผู้กระทำต้องระวางโทษไม่เกินกึ่งหนึ่งของโทษที่กฎหมายกำหนดไว้สำหรับความผิดนั้น
-
-    ถ้าการกระทำดังกล่าวในวรรคแรกได้กระทำไปโดยความเชื่ออย่างงมงาย ศาลจะไม่ลงโทษก็ได้`,
-    analysis:`<h4>🔍 องค์ประกอบความผิด</h4>
-ต้องผ่านองค์ประกอบ ม.80 ก่อน + ต้องไม่บรรลุผลอย่างแน่แท้ เพราะ:<br>
-<strong>① ปัจจัยที่ใช้ในการกระทำ</strong> — ปืนไม่มีกระสุน, ยาไม่มีพิษ<br>
-<strong>② วัตถุที่มุ่งหมายกระทำต่อ</strong> — เหยื่อไม่อยู่นานแล้ว, เหยื่อตายก่อนแล้ว<br><br>
-<strong style="color:#f97316">⚠️ ต้องเป็น 2 สาเหตุนี้เท่านั้น</strong> ถ้าเหตุอื่น → ม.80<br><br>
-<strong>วรรค 2 — งมงาย:</strong> กระทำด้วยความเชื่อไสยศาสตร์ → ศาลอาจไม่ลงโทษ`,
-    penalty:`<h4>⚖️ อัตราโทษ</h4>รับโทษ<strong>ไม่เกินกึ่งหนึ่ง</strong> ของโทษที่กำหนด<br>
-วรรค 2 (งมงาย): ศาล<strong>จะไม่ลงโทษก็ได้`
-  },
-  82:{
-    badge:'ม.82 · ยับยั้ง/กลับใจ',bc:'rgba(34,197,94,.2)',bt:'var(--green)',
-    title:'มาตรา 82 — ยับยั้งหรือกลับใจแก้ไขไม่ให้บรรลุผล',
-    sub:'ประมวลกฎหมายอาญา ภาค 1 บทบัญญัติทั่วไป ลักษณะ 3 การพยายามกระทำความผิด',
-    text:`มาตรา ๘๒
-
-    ถ้าผู้ที่ได้ลงมือกระทำความผิดได้ยับยั้งเสียเองไม่กระทำการให้ตลอด หรือได้กลับใจแก้ไขไม่ให้การกระทำนั้นบรรลุผล ผู้นั้นไม่ต้องรับโทษสำหรับการพยายามกระทำความผิดนั้น
-
-    แต่ถ้าการที่ได้กระทำไปแล้วต้องตามบทกฎหมายที่บัญญัติเป็นความผิด ผู้นั้นต้องรับโทษสำหรับการกระทำนั้น`,
-    analysis:`<h4>🔍 องค์ประกอบความผิด</h4>
-<strong>ลงมือแล้ว</strong> ต้องถึงขั้นลงมือก่อน<br>
-<strong>ยับยั้งเอง 2 วิธี:</strong><br>
-<strong>① ยับยั้งเสียเอง</strong> — หยุดกลางคันโดยสมัครใจ ไม่ถูกบังคับ<br>
-<strong>② กลับใจแก้ไข</strong> — กระทำตลอดแล้ว แต่กลับใจป้องกันผล (เช่น รีบพาส่งโรงพยาบาล)<br><br>
-<strong style="color:#ef4444">⚠️ วรรค 2:</strong> ยังรับผิดในความผิดอื่นที่กระทำไปแล้ว<br>
-เช่น ยิงปืนแล้วหยุด แต่กระสุนไปถูกทรัพย์สิน → ยังผิดฐานทำให้เสียทรัพย์`,
-    penalty:`<h4>⚖️ ผลทางกฎหมาย</h4>
-<strong>ยกเว้นโทษ</strong> สำหรับการพยายามกระทำความผิดนั้น<br>
-แต่ยังรับผิดในความผิดอื่นที่กระทำไปแล้วและมีโทษในตัวเอง`
-  },
-  288:{
-    badge:'ม.288 · ฆ่าโดยเจตนา',bc:'rgba(239,68,68,.2)',bt:'var(--red)',
-    title:'มาตรา 288 — ฆ่าผู้อื่นโดยเจตนา',
-    sub:'ประมวลกฎหมายอาญา ภาค 2 ลักษณะ 10 ความผิดต่อชีวิตและร่างกาย',
-    text:`มาตรา ๒๘๘
-
-    ผู้ใดฆ่าผู้อื่น ต้องระวางโทษประหารชีวิต จำคุกตลอดชีวิต หรือจำคุกตั้งแต่สิบห้าปีถึงยี่สิบปี`,
-    analysis:`<h4>🔍 องค์ประกอบ</h4>
-<strong>1. "ฆ่า"</strong> — กระทำโดยเจตนา (ประสงค์ต่อผล/ย่อมเล็งเห็นผล) ให้ถึงแก่ความตาย<br>
-<strong>2. "ผู้อื่น"</strong> — บุคคลที่ยังมีชีวิตอยู่<br>
-<strong>3. ผล</strong> — ถึงแก่ความตาย + ความสัมพันธ์ระหว่างการกระทำกับผล`,
-    penalty:`<h4>⚖️ อัตราโทษ</h4>ประหารชีวิต / จำคุกตลอดชีวิต / หรือจำคุก 15–20 ปี`
-  }
-};
-
-function openLaw(num){
-  const d=LD[num]; if(!d)return;
-  const badge=document.getElementById('mBadge');
-  badge.textContent=d.badge;badge.style.background=d.bc;badge.style.color=d.bt;
-  document.getElementById('mTitle').textContent=d.title;
-  document.getElementById('mSub').textContent=d.sub;
-  document.getElementById('mText').innerHTML='<span class="ml">📜 ตัวบทกฎหมาย</span>'+d.text;
-  document.getElementById('mAnalysis').innerHTML=d.analysis;
-  document.getElementById('mPenalty').innerHTML=d.penalty;
-  document.getElementById('lawModal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-function closeLawOv(ev){if(ev.target===document.getElementById('lawModal'))closeModal('lawModal');}
-</script>
 </body>
 </html>
